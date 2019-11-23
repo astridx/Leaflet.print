@@ -10,8 +10,8 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="../dist/leaflet.print.js"></script>
-    <script src="http://172.16.206.128:8080/geoserver/pdf/info.json?var=printConfig"></script>
     <script>
+	  var printConfig = {"scales":[{"name":"1:25.000","value":"25000.0"},{"name":"1:50.000","value":"50000.0"},{"name":"1:100.000","value":"100000.0"},{"name":"1:200.000","value":"200000.0"},{"name":"1:500.000","value":"500000.0"},{"name":"1:1.000.000","value":"1000000.0"},{"name":"1:2.000.000","value":"2000000.0"},{"name":"1:4.000.000","value":"4000000.0"}],"dpis":[{"name":"75","value":"75"},{"name":"150","value":"150"},{"name":"300","value":"300"}],"outputFormats":[{"name":"pdf"}],"layouts":[{"name":"A4 portrait","map":{"width":440,"height":483},"rotation":true},{"name":"Legal","map":{"width":440,"height":483},"rotation":false}],"printURL":"http://172.16.206.128:8080/geoserver/pdf/print.pdf","createURL":"http://172.16.206.128:8080/geoserver/pdf/create.json"};
       var map,
 	      printProvider,
 	      printControl,
@@ -32,7 +32,7 @@
 	  printProvider = L.print.provider({
           capabilities: printConfig,
           method: 'GET',
-		  dpi: 254,
+		  dpi: 300,
 		  outputFormat: 'pdf',
 		  customParams: {
 			  mapTitle: 'Print Test',

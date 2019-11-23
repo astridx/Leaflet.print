@@ -32,7 +32,7 @@ L.print.Provider = L.Class.extend({
 	},
 
 	initialize: function (options) {
-		if (L.version <= '1.6.0') {
+		if (L.version <= '0.6.0') {
 			throw 'Leaflet.print is not tested with Leaflet 1.6.0-. Download latest from https://github.com/Leaflet/Leaflet/';
 		}
 
